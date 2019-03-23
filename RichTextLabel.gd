@@ -28,7 +28,8 @@ func _process(delta):
 func getCoin():
 	cash += 100;
 	
-	
+func resetCoin():
+	cash = INITIAL_CASH
 
 func comma_sep(number):
     var string = str(number)
@@ -41,5 +42,6 @@ func comma_sep(number):
         res += string[i]
 
     return res
+
 
 	

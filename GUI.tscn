@@ -4,12 +4,12 @@
 [ext_resource path="res://RichTextLabel.gd" type="Script" id=2]
 [ext_resource path="res://DeathText.gd" type="Script" id=3]
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=1]
 size = 48
 extra_spacing_top = 15
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 1 )
 
@@ -33,10 +33,10 @@ margin_bottom = 60.0
 margin_right = 300.0
 margin_bottom = 60.0
 rect_min_size = Vector2( 300, 60 )
-custom_fonts/normal_font = SubResource( 14 )
+custom_fonts/normal_font = SubResource( 1 )
 custom_colors/default_color = Color( 1, 1, 0, 1 )
 custom_colors/selection_color = Color( 1, 1, 0, 1 )
-text = "$Placeholder"
+text = "#2,000,000"
 script = ExtResource( 2 )
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer"]
@@ -57,7 +57,7 @@ margin_right = 200.0
 margin_bottom = 50.0
 grow_horizontal = 0
 rect_min_size = Vector2( 200, 40 )
-custom_fonts/normal_font = SubResource( 15 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Deaths: 100
 "
 scroll_active = false
