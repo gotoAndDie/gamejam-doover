@@ -13,7 +13,6 @@ func _ready():
 	pass # Replace with function body.
 
 func _physics_process(delta):
-	print(direction)
 	var collision
 	direction_progress -= delta;
 	if direction_progress <= 0:

@@ -3,6 +3,8 @@ extends Node2D
 var initPos = Vector2(216, 447)
 var theGui
 
+var whiteOut = load("res://whiteOut.tscn") 
+
 func _on_princess_body_enter(body):
 	# The name of this editor-generated callback is unfortunate
 	if body.get_name() == "player":
@@ -25,6 +27,8 @@ func _ready():
 
 func die():
 	theGui.get_node("MarginContainer/HBoxContainer2/VBoxContainer2/DeathText").die()
+	theGui.get_node("MarginContainer/HBoxContainer/VBoxContainer/CashText").resetCoin()
+	theGui.add_child(whiteOut.instance())
 	
 func getCoin():
 	theGui.get_node("MarginContainer/HBoxContainer/VBoxContainer/CashText").getCoin()
