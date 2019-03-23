@@ -6,7 +6,7 @@ extends StaticBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	modulate = Color8(255, 255, 255, 100)
 
 func set_pos(thePosition):
 	position = thePosition

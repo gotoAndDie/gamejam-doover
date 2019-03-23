@@ -9,12 +9,9 @@ func _ready():
 	connect("body_entered", self, "body_entered")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-# func _process(delta):
+#func _process(delta):
 #	pass
-signal collect
+
 func body_entered(body):
-	if body.has_method("out"): # Only players can be out
-		emit_signal("collect")
-		print("coin")
-		queue_free()
-		
+	if body.has_method("out"):
+		get_parent().get_node("piano2").start();

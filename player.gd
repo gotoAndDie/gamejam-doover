@@ -7,7 +7,7 @@ const GRAVITY = 800.0 # pixels/second/second
 
 # Angle in degrees towards either side that the player can consider "floor"
 const FLOOR_ANGLE_TOLERANCE = 40
-const WALK_FORCE = 600
+const WALK_FORCE = 1200
 const WALK_MIN_SPEED = 10
 const WALK_MAX_SPEED = 200
 const STOP_FORCE = 1300
@@ -76,7 +76,7 @@ func _physics_process(delta):
 	if freeze:
 		velocity = Vector2(0,0)
 		if Input.is_action_pressed("ui_cancel"):
-			get_tree().change_scene("res://colworld.tscn")
+			get_tree().change_scene("res://stage1.tscn")
 	# Integrate velocity into motion and move
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	

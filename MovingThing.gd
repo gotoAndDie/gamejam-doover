@@ -6,7 +6,7 @@ extends KinematicBody2D
 const DIRECTION_HOLD = 1
 const GRAVITY = 800.0
 var direction_progress = DIRECTION_HOLD
-var direction = 200
+var direction = 175
 var yVelocity = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():

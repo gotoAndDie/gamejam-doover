@@ -15,6 +15,8 @@ func _ready():
 	var prePause = load("res://PauseContainer.tscn") 
 	theGui = gui.instance()
 	var thePause = prePause.instance()
+	if get_node("piano1") != null:
+		get_node("piano1").start()
 	
 	add_child(theGui)
 	theGui.add_child(thePause)
