@@ -5,7 +5,7 @@ extends Area2D
 # var b = "text"
 
 
-var neutral_spike = load("res://inactiveSpike.png")
+var neutral_spike = load("res://img/blunt_spike.png")
 var isNeutral = false
 
 # Called when the node enters the scene tree for the first time.

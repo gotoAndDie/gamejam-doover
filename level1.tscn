@@ -39,7 +39,7 @@ offset = Vector2( -42.3331, -27.3687 )
 position = Vector2( 390, 310 )
 texture = ExtResource( 4 )
 
-[node name="Spike" parent="." index="16"]
+[node name="Spike" parent="." index="13"]
 position = Vector2( 140, 330 )
 z_index = -5
 
