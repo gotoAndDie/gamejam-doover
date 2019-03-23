@@ -13,6 +13,7 @@ func _ready():
 
 func die():
 	deaths += 1
+	HighScoreTable.currentScore = deaths
 	clear()
 	add_text("Deaths: " + str(deaths))
 	

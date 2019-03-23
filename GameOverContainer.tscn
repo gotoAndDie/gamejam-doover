@@ -1,27 +1,37 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://neoletters.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://GameOverContainer.gd" type="Script" id=1]
+[ext_resource path="res://shade.png" type="Texture" id=2]
+[ext_resource path="res://neoletters.ttf" type="DynamicFontData" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 72
-font_data = ExtResource( 1 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 32
 extra_spacing_bottom = 12
-font_data = ExtResource( 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 3 )
 
 [node name="GameOverContainer" type="CenterContainer"]
 margin_left = 1.0
 margin_right = 1280.0
 margin_bottom = 723.0
 rect_pivot_offset = Vector2( -820, -290 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 640, 360 )
+texture = ExtResource( 2 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 239.0
-margin_top = 271.0
+margin_top = 221.0
 margin_right = 1039.0
-margin_bottom = 451.0
+margin_bottom = 501.0
 alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
@@ -55,4 +65,59 @@ text = "It didn't work
 You and your family are bankrupt
 Press Esc to try again"
 scroll_active = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 184.0
+margin_right = 800.0
+margin_bottom = 280.0
+alignment = 1
+
+[node name="first" type="RichTextLabel" parent="VBoxContainer/VBoxContainer"]
+margin_right = 800.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 0, 16 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]1st place: [/center]"
+text = "1st place: "
+
+[node name="second" type="RichTextLabel" parent="VBoxContainer/VBoxContainer"]
+margin_top = 20.0
+margin_right = 800.0
+margin_bottom = 36.0
+rect_min_size = Vector2( 0, 16 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]2nd place: [/center]"
+text = "2nd place: "
+
+[node name="third" type="RichTextLabel" parent="VBoxContainer/VBoxContainer"]
+margin_top = 40.0
+margin_right = 800.0
+margin_bottom = 56.0
+rect_min_size = Vector2( 0, 16 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]3rd place: [/center]"
+text = "3rd place: "
+
+[node name="fourth" type="RichTextLabel" parent="VBoxContainer/VBoxContainer"]
+margin_top = 60.0
+margin_right = 800.0
+margin_bottom = 76.0
+rect_min_size = Vector2( 0, 16 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]4th place: [/center]"
+text = "4th place: "
+
+[node name="fifth" type="RichTextLabel" parent="VBoxContainer/VBoxContainer"]
+margin_top = 80.0
+margin_right = 800.0
+margin_bottom = 96.0
+rect_min_size = Vector2( 0, 16 )
+custom_fonts/normal_font = SubResource( 3 )
+bbcode_enabled = true
+bbcode_text = "[center]5th place: [/center]"
+text = "5th place: "
 

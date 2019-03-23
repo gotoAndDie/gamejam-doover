@@ -19,6 +19,10 @@ config/name="Kinematic Character"
 run/main_scene="res://colworld.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+HighScoreTable="*res://HighScoreTable.gd"
+
 [display]
 
 window/size/width=1280
