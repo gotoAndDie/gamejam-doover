@@ -28,7 +28,9 @@ var isClimbing = false
 
 var up
 var down
-
+var freeze = false
+func _ready():
+	pass
 func _physics_process(delta):
 	# Create forces
 	var force = Vector2(0, GRAVITY)
@@ -70,6 +72,8 @@ func _physics_process(delta):
 		else:
 			velocity.y = 0
 		on_air_time = 0
+	if freeze:
+		velocity = Vector2(0,0)
 	# Integrate velocity into motion and move
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
@@ -110,3 +114,5 @@ func isClimbing() :
 	isClimbing = true
 func notClimbing() :
 	isClimbing = false
+func freeze():
+	freeze = true

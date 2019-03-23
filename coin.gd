@@ -4,10 +4,6 @@ extends Area2D
 # var a = 2
 # var b = "text"
 
-
-var neutral_spike = load("res://player.png") 
-var isNeutral = false
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	connect("body_entered", self, "body_entered")

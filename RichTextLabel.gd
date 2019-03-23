@@ -12,6 +12,7 @@ var scene_instance
 func _ready():
 	cash = INITIAL_CASH
 
+signal freeze
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	clear()
@@ -19,6 +20,7 @@ func _process(delta):
 	if(cash <= 0):
 		scene_instance = scene.instance()
 		get_parent().get_parent().get_parent().get_parent().add_child(scene_instance)
+		emit_signal("freeze")
 		queue_free()
 	else:
 		cash -= 120 * delta
