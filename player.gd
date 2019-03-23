@@ -74,6 +74,8 @@ func _physics_process(delta):
 		on_air_time = 0
 	if freeze:
 		velocity = Vector2(0,0)
+		if Input.is_action_pressed("ui_cancel"):
+			get_tree().change_scene("res://colworld.tscn")
 	# Integrate velocity into motion and move
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
@@ -116,3 +118,5 @@ func notClimbing() :
 	isClimbing = false
 func freeze():
 	freeze = true
+func push(speed):
+	velocity.x = speed

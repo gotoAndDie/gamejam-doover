@@ -1,6 +1,6 @@
 extends Node2D
 
-var initPos = Vector2(233, 223)
+var initPos = Vector2(216, 447)
 var theGui
 
 func _on_princess_body_enter(body):
@@ -10,14 +10,18 @@ func _on_princess_body_enter(body):
 		
 func _ready():
 	var gui = load("res://GUI.tscn") 
-	theGui = gui.instance();
+	var prePause = load("res://PauseContainer.tscn") 
+	theGui = gui.instance()
+	var thePause = prePause.instance()
 	
 	add_child(theGui)
+	theGui.add_child(thePause)
 	for N in get_children():
 		if "Coin" in N.get_name():
 			N.connect("collect", self, "getCoin")
 	get_node("player").connect("death", self, "die")
 	theGui.get_node("MarginContainer/HBoxContainer/VBoxContainer/CashText").connect("freeze", self, "freezePlayer")
+	get_tree().paused = true
 
 func die():
 	theGui.get_node("MarginContainer/HBoxContainer2/VBoxContainer2/DeathText").die()

@@ -14,7 +14,6 @@ func _ready():
 # func _process(delta):
 #	pass
 func body_exited(body):
-	print("hi")
 	if body.has_method("out"): # Only players can be out
 		get_node("Sprite").texture = normal_platform
 		collider.collision_layer = 1
