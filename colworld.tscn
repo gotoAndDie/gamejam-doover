@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://colworld.gd" type="Script" id=1]
 [ext_resource path="res://obstacle.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://VictoryPlane.gd" type="Script" id=7]
 [ext_resource path="res://neoletters.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://RichTextLabel.gd" type="Script" id=9]
+[ext_resource path="res://DeathText.gd" type="Script" id=10]
+[ext_resource path="res://Spike.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -118,6 +120,11 @@ extents = Vector2( 32, 8 )
 extents = Vector2( 1524.95, 32.1829 )
 
 [sub_resource type="DynamicFont" id=14]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 32
 font_data = ExtResource( 8 )
 
 [node name="colworld" type="Node2D"]
@@ -134,7 +141,7 @@ position = Vector2( 233.06, 223.436 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 current = true
-zoom = Vector2( 0.75, 0.75 )
+zoom = Vector2( 0.5, 0.5 )
 limit_left = 0
 limit_bottom = 540
 
@@ -280,28 +287,52 @@ script = ExtResource( 7 )
 position = Vector2( 888.294, 758.751 )
 shape = SubResource( 13 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="GUI" type="CanvasLayer" parent="."]
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
-margin_right = 960.0
+[node name="MarginContainer" type="MarginContainer" parent="GUI"]
+margin_right = 1280.0
 margin_bottom = 40.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
-margin_right = 960.0
+[node name="HBoxContainer" type="HBoxContainer" parent="GUI/MarginContainer"]
+margin_right = 1280.0
 margin_bottom = 40.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MarginContainer/HBoxContainer"]
-margin_right = 100.0
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/MarginContainer/HBoxContainer"]
+margin_right = 300.0
 margin_bottom = 40.0
-rect_min_size = Vector2( 100, 20 )
+
+[node name="CashText" type="RichTextLabel" parent="GUI/MarginContainer/HBoxContainer/VBoxContainer"]
+margin_right = 300.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 300, 40 )
 custom_fonts/normal_font = SubResource( 14 )
 text = "$Placeholder"
 script = ExtResource( 9 )
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer/MarginContainer/HBoxContainer"]
-margin_left = 104.0
-margin_right = 204.0
+[node name="HBoxContainer2" type="HBoxContainer" parent="GUI/MarginContainer"]
+margin_right = 1280.0
 margin_bottom = 40.0
-rect_min_size = Vector2( 100, 20 )
+alignment = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GUI/MarginContainer/HBoxContainer2"]
+margin_left = 1080.0
+margin_right = 1280.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+alignment = 1
+
+[node name="DeathText" type="RichTextLabel" parent="GUI/MarginContainer/HBoxContainer2/VBoxContainer2"]
+margin_right = 200.0
+margin_bottom = 40.0
+grow_horizontal = 0
+rect_min_size = Vector2( 200, 40 )
+custom_fonts/normal_font = SubResource( 15 )
+text = "Deaths: 100
+"
+scroll_active = false
+script = ExtResource( 10 )
+
+[node name="Spike" parent="." instance=ExtResource( 11 )]
+position = Vector2( 521.656, 453.219 )
 
 [connection signal="body_entered" from="princess" to="." method="_on_princess_body_enter"]

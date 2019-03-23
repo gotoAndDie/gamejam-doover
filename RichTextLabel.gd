@@ -18,7 +18,7 @@ func _process(delta):
 	add_text("$" + str(int(cash)))
 	if(cash <= 0):
 		scene_instance = scene.instance()
-		get_parent().get_parent().add_child(scene_instance)
+		get_parent().get_parent().get_parent().get_parent().add_child(scene_instance)
 	else:
 		cash -= 120 * delta
 	  
