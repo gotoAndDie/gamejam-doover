@@ -26,6 +26,9 @@ func _ready():
 	get_tree().paused = true
 
 func die():
+	for N in get_children():
+		if "OneTimePlat" in N.get_name():
+			N.change_state()
 	theGui.get_node("MarginContainer/HBoxContainer2/VBoxContainer2/DeathText").die()
 	theGui.get_node("MarginContainer/HBoxContainer/VBoxContainer/CashText").resetCoin()
 	theGui.add_child(whiteOut.instance())
