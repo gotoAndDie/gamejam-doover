@@ -61,3 +61,7 @@ move_up={
 [memory]
 
 multithread/thread_rid_pool_prealloc=60
+
+[rendering]
+
+environment/default_clear_color=Color( 0, 0, 0.235294, 1 )
