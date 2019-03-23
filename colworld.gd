@@ -32,7 +32,6 @@ func die():
 	
 func getCoin():
 	get_node("coinsound").play()
-	print("play")
 	theGui.get_node("MarginContainer/HBoxContainer/VBoxContainer/CashText").getCoin()
 	
 func freezePlayer():

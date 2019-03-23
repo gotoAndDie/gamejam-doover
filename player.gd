@@ -72,6 +72,7 @@ func _physics_process(delta):
 		else:
 			velocity.y = 0
 		on_air_time = 0
+		double_jumping = false
 	if freeze:
 		velocity = Vector2(0,0)
 		if Input.is_action_pressed("ui_cancel"):

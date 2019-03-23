@@ -17,8 +17,11 @@ signal freeze
 func _process(delta):
 	clear()
 	add_text("$" + comma_sep(int(cash)) + ",000")
-	if(cash <= 0):
+	if cash <= 0:
 		scene_instance = scene.instance()
+		connect("freeze", self, "freeze")
+		HighScoreTable.insert()
+		HighScoreTable.currentScore = 0
 		get_parent().get_parent().get_parent().get_parent().add_child(scene_instance)
 		emit_signal("freeze")
 		queue_free()
@@ -31,6 +34,8 @@ func getCoin():
 func resetCoin():
 	cash = INITIAL_CASH
 
+func freeze():
+	scene_instance.freeze()
 func comma_sep(number):
     var string = str(number)
     var mod = string.length() % 3

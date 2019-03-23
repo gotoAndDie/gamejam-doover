@@ -294,4 +294,22 @@ position = Vector2( 169.578, 443.551 )
 [node name="coinsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 12 )
 
+[node name="Spike2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 85.1151, 396.945 )
+
+[node name="Spike3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 357.483, 451.883 )
+
+[node name="Spike4" parent="." instance=ExtResource( 7 )]
+position = Vector2( -7.73773, 283.975 )
+
+[node name="Spike5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 44.1051, 338.913 )
+
+[node name="Spike6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 113.745, 430.218 )
+
+[node name="Spike7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 394.624, 390.755 )
+
 [connection signal="body_entered" from="princess" to="." method="_on_princess_body_enter"]
