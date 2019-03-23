@@ -19,6 +19,7 @@ func _process(delta):
 	if(cash <= 0):
 		scene_instance = scene.instance()
 		get_parent().get_parent().get_parent().get_parent().add_child(scene_instance)
+		queue_free()
 	else:
 		cash -= 120 * delta
 	  

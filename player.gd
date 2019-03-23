@@ -24,7 +24,10 @@ var jumping = false
 var double_jumping = false
 
 var prev_jump_pressed = false
+var isClimbing = false
 
+var up
+var down
 
 func _physics_process(delta):
 	# Create forces
@@ -32,6 +35,8 @@ func _physics_process(delta):
 	
 	var walk_left = Input.is_action_pressed("move_left")
 	var walk_right = Input.is_action_pressed("move_right")
+	up = Input.is_action_pressed("ui_up")
+	down = Input.is_action_pressed("ui_down")
 	var jump = Input.is_action_pressed("jump")
 	
 	var stop = true
@@ -57,6 +62,14 @@ func _physics_process(delta):
 	
 	# Integrate forces to velocity
 	velocity += force * delta	
+	if isClimbing:
+		if up:
+			velocity.y = -100
+		elif down:
+			velocity.y = 100
+		else:
+			velocity.y = 0
+		on_air_time = 0
 	# Integrate velocity into motion and move
 	velocity = move_and_slide(velocity, Vector2(0, -1))
 	
@@ -83,6 +96,7 @@ func _physics_process(delta):
 	on_air_time += delta
 	prev_jump_pressed = jump
 	
+	
 signal death
 func out():
 	var body = load("res://body.tscn") 
@@ -91,3 +105,8 @@ func out():
 	theBody.set_pos(position)
 	position = get_parent().initPos
 	emit_signal("death")
+	
+func isClimbing() :
+	isClimbing = true
+func notClimbing() :
+	isClimbing = false
