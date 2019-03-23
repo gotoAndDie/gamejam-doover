@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://colworld.gd" type="Script" id=1]
 [ext_resource path="res://obstacle.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://RichTextLabel.gd" type="Script" id=9]
 [ext_resource path="res://DeathText.gd" type="Script" id=10]
 [ext_resource path="res://Spike.tscn" type="PackedScene" id=11]
+[ext_resource path="res://coin.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
@@ -160,6 +161,7 @@ playback_process_mode = 0
 anims/leftright = SubResource( 4 )
 
 [node name="moving_platform2" type="KinematicBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 88.3493, 284.689 )
 
 [node name="collision" type="CollisionShape2D" parent="moving_platform2"]
@@ -175,6 +177,7 @@ anims/leftright = SubResource( 5 )
 anims/updown = SubResource( 6 )
 
 [node name="princess" type="Area2D" parent="."]
+editor/display_folded = true
 position = Vector2( 97, 72 )
 
 [node name="collision" type="CollisionShape2D" parent="princess"]
@@ -240,6 +243,7 @@ shape = SubResource( 8 )
 one_way_collision = true
 
 [node name="circle" type="KinematicBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 241.169, 304.126 )
 
 [node name="sprite" type="Sprite" parent="circle"]
@@ -261,6 +265,7 @@ position = Vector2( 0, -37.4108 )
 texture = ExtResource( 2 )
 
 [node name="platform" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 251.44, 396.557 )
 rotation = -0.428054
 
@@ -271,6 +276,7 @@ texture = ExtResource( 6 )
 shape = SubResource( 12 )
 
 [node name="platform1" type="StaticBody2D" parent="."]
+editor/display_folded = true
 position = Vector2( 369.116, 394.016 )
 rotation = 0.465931
 
@@ -281,6 +287,7 @@ texture = ExtResource( 6 )
 shape = SubResource( 12 )
 
 [node name="VictoryPlane" type="Area2D" parent="."]
+editor/display_folded = true
 script = ExtResource( 7 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VictoryPlane"]
@@ -288,6 +295,7 @@ position = Vector2( 888.294, 758.751 )
 shape = SubResource( 13 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="MarginContainer" type="MarginContainer" parent="GUI"]
 margin_right = 1280.0
@@ -334,5 +342,20 @@ script = ExtResource( 10 )
 
 [node name="Spike" parent="." instance=ExtResource( 11 )]
 position = Vector2( 521.656, 453.219 )
+
+[node name="Coin" parent="." instance=ExtResource( 12 )]
+position = Vector2( 332.52, 291.927 )
+
+[node name="Coin3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 451.999, 354.349 )
+
+[node name="Coin4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 329.593, 451.884 )
+
+[node name="Coin5" parent="." instance=ExtResource( 12 )]
+position = Vector2( 290.58, 452.859 )
+
+[node name="Coin2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 367.092, 272.556 )
 
 [connection signal="body_entered" from="princess" to="." method="_on_princess_body_enter"]

@@ -85,5 +85,9 @@ func _physics_process(delta):
 	
 signal death
 func out():
+	var body = load("res://body.tscn") 
+	var theBody = body.instance()
+	get_parent().add_child(theBody)
+	theBody.set_pos(position)
 	position = get_parent().initPos
 	emit_signal("death")

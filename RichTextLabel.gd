@@ -3,7 +3,7 @@ extends RichTextLabel
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-const INITIAL_CASH = 1000
+const INITIAL_CASH = 2000
 var cash;
 var scene = load("res://GameOverContainer.tscn")
 var scene_instance
@@ -15,11 +15,28 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	clear()
-	add_text("$" + str(int(cash)))
+	add_text("$" + comma_sep(int(cash)) + ",000")
 	if(cash <= 0):
 		scene_instance = scene.instance()
 		get_parent().get_parent().get_parent().get_parent().add_child(scene_instance)
 	else:
 		cash -= 120 * delta
 	  
+func getCoin():
+	cash += 100;
+	
+	
+
+func comma_sep(number):
+    var string = str(number)
+    var mod = string.length() % 3
+    var res = ""
+
+    for i in range(0, string.length()):
+        if i != 0 && i % 3 == mod:
+            res += ","
+        res += string[i]
+
+    return res
+
 	
