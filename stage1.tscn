@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://colworld.gd" type="Script" id=1]
 [ext_resource path="res://img/tileset.png" type="Texture" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://img/props/hotel-sign.png" type="Texture" id=15]
 [ext_resource path="res://img/props/control-box-2.png" type="Texture" id=16]
 [ext_resource path="res://MovingThing.tscn" type="PackedScene" id=17]
+[ext_resource path="res://platform.tscn" type="PackedScene" id=18]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 8, 0, 8, 0, 8, 8, 8, 8 )
@@ -491,4 +492,7 @@ position = Vector2( 930, 180 )
 
 [node name="MovingThing" parent="." instance=ExtResource( 17 )]
 position = Vector2( 750, 32 )
+
+[node name="Node2D2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 660, 58 )
 
