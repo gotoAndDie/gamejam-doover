@@ -111,6 +111,7 @@ func out():
 	var newSkin = randi()%3
 	var newRect = Rect2(newSkin*16, 0, 16, 32)
 	get_node("sprite").set_region_rect(newRect)
+	theBody.set_skin(newRect)
 	get_parent().add_child(theBody)
 	theBody.set_pos(position)
 	position = get_parent().initPos

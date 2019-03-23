@@ -59,10 +59,10 @@ grow_vertical = 2
 rect_min_size = Vector2( 1000, 100 )
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
-bbcode_text = "[center]You're in debt.
+bbcode_text = "[center]You're deep in student debt.
 Kill yourself to save your family.
 If you do it enough times it might just work.[/center]"
-text = "You're in debt.
+text = "You're deep in student debt.
 Kill yourself to save your family.
 If you do it enough times it might just work."
 scroll_active = false
