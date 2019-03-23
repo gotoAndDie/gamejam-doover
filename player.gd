@@ -82,3 +82,6 @@ func _physics_process(delta):
 	
 	on_air_time += delta
 	prev_jump_pressed = jump
+	
+func out():
+	position = get_parent().initPos
