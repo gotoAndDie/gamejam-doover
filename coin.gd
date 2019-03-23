@@ -16,3 +16,4 @@ func body_entered(body):
 	if body.has_method("out"): # Only players can be out
 		emit_signal("collect")
 		queue_free()
+		
